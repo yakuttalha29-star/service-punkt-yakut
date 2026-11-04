@@ -73,4 +73,4 @@
 - Öffnungszeiten Laden Mo–Sa 09–18 Uhr: **bestätigt**. Schlüsselnotdienst 24/7.
 - Standort „im Globus Gensingen, direkt an der Information beim Hintereingang“: **bestätigt**.
 - Shopify Basic: **vorgemerkt**, noch nicht gebucht.
-- Hosting Cloudflare Pages: Rückfrage offen.
+- Hosting: **Cloudflare Pages (kostenlos)** statt IONOS-Hostingpaket. Livegang erst nach vollständigem Impressum und Datenschutz.

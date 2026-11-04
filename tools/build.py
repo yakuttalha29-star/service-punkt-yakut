@@ -10,6 +10,7 @@ import json
 import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
+OUT = ROOT / "public"   # nur dieser Ordner wird veröffentlicht (Cloudflare Pages: Ausgabeverzeichnis "public")
 FIRMA = json.loads((ROOT / "data" / "firma.json").read_text(encoding="utf-8"))
 WARN = set()
 
@@ -73,7 +74,7 @@ def page(path, title, desc, body, depth=0, noindex=False, extra_head=""):
 </body>
 </html>
 """
-    out = ROOT / path
+    out = OUT / path
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(doc, encoding="utf-8")
 
@@ -299,7 +300,8 @@ def impressum_entwurf():
   <h2>Verbraucherstreitbeilegung</h2>
   <p>{feld("streitbeilegung", "Erklärung nach § 36 VSBG – Formulierung mit Rechtstexte-Dienst abstimmen")}</p>
 </section>"""
-    page("impressum-entwurf.html", "Impressum (ENTWURF) | Service-Punkt Yakut", "Entwurf", body, noindex=True)
+    # Bewusst AUSSERHALB von public/: wird nie mit veröffentlicht.
+    page("../entwurf/impressum.html", "Impressum (ENTWURF) | Service-Punkt Yakut", "Entwurf", body, depth=1, noindex=True)
 
 def shop_platzhalter():
     """Bis der Shopify-Shop steht: ehrliche Hinweisseite statt totem Link."""
@@ -316,12 +318,37 @@ def shop_platzhalter():
          "Personalisierte Stempel, Schilder, Gravuren und Pokale – der Onlineshop von Service-Punkt Yakut ist in Vorbereitung.",
          body, depth=1, noindex=True)
 
+HEADERS = """/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+/assets/*
+  Cache-Control: public, max-age=86400
+"""
+
+def statische_dateien():
+    import shutil
+    (OUT / "assets").mkdir(parents=True, exist_ok=True)
+    shutil.copy2(ROOT / "assets" / "styles.css", OUT / "assets" / "styles.css")
+    (OUT / "_headers").write_text(HEADERS, encoding="utf-8")
+    (OUT / "robots.txt").write_text(
+        "User-agent: *\nAllow: /\nSitemap: " + FIRMA["website"].rstrip("/") + "/sitemap.xml\n",
+        encoding="utf-8")
+    seiten = ["", *[f"leistungen/{l['slug']}.html" for l in LEISTUNGEN]]
+    base = FIRMA["website"].rstrip("/") + "/"
+    urls = "".join(f"<url><loc>{e(base + s)}</loc></url>" for s in seiten)
+    (OUT / "sitemap.xml").write_text(
+        f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n',
+        encoding="utf-8")
+
 if __name__ == "__main__":
+    statische_dateien()
     startseite()
     for l in LEISTUNGEN:
         leistung_seite(l)
     impressum_entwurf()
     shop_platzhalter()
-    print(f"OK: index.html, {len(LEISTUNGEN)} Leistungsseiten, impressum-entwurf.html")
+    print(f"OK: index.html, {len(LEISTUNGEN)} Leistungsseiten, entwurf/impressum.html (nicht veröffentlicht)")
     if WARN:
         print("FEHLENDE ANGABEN (in data/firma.json eintragen):", ", ".join(sorted(WARN)))

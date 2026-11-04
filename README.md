@@ -9,8 +9,8 @@ Statische Seiten mit dunklem, minimalistischem Design. Sie laufen kostenlos auf 
 |---|---|
 | `data/firma.json` | **Einzige Quelle** für Firmendaten (Adresse, Telefon, Öffnungszeiten …). `null` = noch nicht geliefert. |
 | `tools/build.py` | Erzeugt alle Seiten aus `firma.json` und den Leistungstexten (im Skript, Abschnitt `LEISTUNGEN`). |
-| `index.html`, `leistungen/*.html`, `shop/index.html` | **Erzeugte** Seiten. Nicht von Hand bearbeiten, sondern `build.py` ausführen. |
-| `impressum-entwurf.html` | Impressum-**Entwurf** (`noindex`). Wird erst als `impressum.html` veröffentlicht, wenn alle Angaben vollständig und geprüft sind. |
+| `public/` | **Erzeugte** Website, nur dieser Ordner wird veröffentlicht. Nicht von Hand bearbeiten, sondern `build.py` ausführen. |
+| `entwurf/impressum.html` | Impressum-**Entwurf**, liegt außerhalb von `public/` und wird nie automatisch veröffentlicht. |
 | `assets/styles.css` | Design (Farben als Variablen in `:root`). |
 | `data/shop-katalog.json` | Produktstruktur für den Shopify-Import. **Preise sind Beispiele.** |
 | `docs/` | Bestandsaufnahme, Plan, Entscheidungen. |
@@ -26,10 +26,14 @@ Das Skript listet am Ende alle fehlenden Pflichtangaben auf. Fehlende Werte werd
 ## Lokal ansehen
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 8000 -d public
 ```
 
 Dann im Browser `http://localhost:8000` öffnen.
+
+## Veröffentlichen
+
+Cloudflare Pages (kostenlos), siehe `docs/VEROEFFENTLICHEN-CLOUDFLARE.md`. Build command `python3 tools/build.py`, Ausgabeordner `public`.
 
 ## Regeln
 
