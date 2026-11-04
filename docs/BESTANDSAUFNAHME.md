@@ -68,3 +68,9 @@
 3. GitHub-Verbindung und das private Repository `service-punkt-yakut`
 4. Netzwerkfreigabe für `yakut-service.de` und `service-punkt-yakut.cocoajam512.chatgpt.site`
 5. Echte Fotos (Laden, Gravurbeispiele, Schuhreparaturen)
+
+## 6. Entscheidungen des Inhabers (04.11.2026)
+- Öffnungszeiten Laden Mo–Sa 09–18 Uhr: **bestätigt**. Schlüsselnotdienst 24/7.
+- Standort „im Globus Gensingen, direkt an der Information beim Hintereingang“: **bestätigt**.
+- Shopify Basic: **vorgemerkt**, noch nicht gebucht.
+- Hosting Cloudflare Pages: Rückfrage offen.
