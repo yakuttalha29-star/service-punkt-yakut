@@ -4,13 +4,13 @@
   "name_kurz": "Service-Punkt Yakut",
   "standort": "im Globus Gensingen",
   "standort_detail": "direkt an der Information beim Hintereingang",
-  "strasse": null,
+  "strasse": "Binger Str. 1",
   "plz": "55457",
   "ort": "Gensingen",
-  "inhaber": null,
-  "telefon": null,
+  "inhaber": "Talha Yakut",
+  "telefon": "0179 5056633",
   "notdienst": null,
-  "email": null,
+  "email": "service.yakut@gmail.com",
   "ust_id": null,
   "kammer": null,
   "streitbeilegung": null,
@@ -24,5 +24,14 @@
   "website": "https://yakut-service.de/",
   "instagram": "https://www.instagram.com/service.punkt/",
   "whatsapp_kanal": "https://whatsapp.com/channel/0029VbCdUwTBfxo1BzQQBK2D",
-  "einzugsgebiet": ["Gensingen", "Bad Kreuznach", "Bingen", "Langenlonsheim", "Planig", "Wörrstadt", "Alzey"]
+  "einzugsgebiet": [
+    "Gensingen",
+    "Bad Kreuznach",
+    "Bingen",
+    "Langenlonsheim",
+    "Planig",
+    "Wörrstadt",
+    "Alzey"
+  ],
+  "_offen": "Notdienstnummer (gleich wie Telefon?), USt-IdNr. (Nummer fehlt), Kleinunternehmer?, Handwerkskammer?"
 }
