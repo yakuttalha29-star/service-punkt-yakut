@@ -1,0 +1,273 @@
+{
+  "_hinweis": "Texte der Leistungsseiten. Nur bestätigte Aussagen, keine Preise/Zeiten ohne Freigabe des Inhabers.",
+  "leistungen": [
+    {
+      "slug": "tueroeffnung",
+      "icon": "door",
+      "titel": "Türöffnung 24/7",
+      "kurz": "Schnell vor Ort, beschädigungsarm.",
+      "seo_title": "Türöffnung & Schlüsselnotdienst 24/7 – Gensingen, Bad Kreuznach, Bingen",
+      "seo_desc": "Ausgesperrt? Türöffnungs-Notdienst rund um die Uhr für Gensingen, Bad Kreuznach, Bingen, Alzey und Umgebung. Service-Punkt Yakut.",
+      "h1": "Türöffnung – rund um die Uhr",
+      "lead": "Tür zugefallen, Schlüssel verloren oder abgebrochen? Unser Notdienst ist 24 Stunden am Tag, 7 Tage die Woche erreichbar.",
+      "punkte": [
+        {
+          "titel": "Zugefallene Türen",
+          "text": "Öffnung zugefallener Haus- und Wohnungstüren – wenn möglich ohne Beschädigung des Schlosses."
+        },
+        {
+          "titel": "Abgeschlossene Türen",
+          "text": "Öffnung verschlossener Türen und anschließend auf Wunsch Austausch des Zylinders."
+        },
+        {
+          "titel": "Abgebrochener Schlüssel",
+          "text": "Entfernen abgebrochener Schlüssel aus dem Zylinder."
+        },
+        {
+          "titel": "Nach dem Einsatz",
+          "text": "Neuer Schließzylinder oder Schlüsselkopien direkt bei uns im Globus Gensingen."
+        }
+      ],
+      "faq": [
+        {
+          "frage": "Was muss ich bei der Türöffnung vorweisen?",
+          "antwort": "Zu Ihrer Sicherheit öffnen wir nur, wenn Sie Ihre Berechtigung nachweisen können, z. B. mit Personalausweis mit Meldeadresse oder Mietvertrag."
+        },
+        {
+          "frage": "Was kostet eine Türöffnung?",
+          "antwort": "Bitte fragen Sie den Preis am Telefon vor dem Einsatz verbindlich an. So gibt es vor Ort keine Überraschungen."
+        }
+      ],
+      "notfall": true,
+      "panel_titel": "Ausgesperrt?",
+      "panel_text": "Wir sind da. Rund um die Uhr.",
+      "thema": "urgent"
+    },
+    {
+      "slug": "schluessel",
+      "icon": "key",
+      "titel": "Schlüssel nachmachen",
+      "kurz": "Haus-, Briefkasten-, Autoschlüssel.",
+      "seo_title": "Schlüssel nachmachen im Globus Gensingen – Schlüsseldienst Yakut",
+      "seo_desc": "Schlüsselkopien für Haus, Wohnung, Briefkasten und mehr – im Globus Gensingen, meist während Sie warten. Service-Punkt Yakut.",
+      "h1": "Schlüssel nachmachen",
+      "lead": "Bringen Sie einfach Ihren Originalschlüssel mit – wir fertigen die Kopie in unserem Laden im Globus Gensingen.",
+      "punkte": [
+        {
+          "titel": "Haus- & Wohnungsschlüssel",
+          "text": "Kopien gängiger Bart- und Zylinderschlüssel."
+        },
+        {
+          "titel": "Briefkasten & Möbel",
+          "text": "Kleine Schlüssel für Briefkasten, Schränke und Vorhängeschlösser."
+        },
+        {
+          "titel": "Autoschlüssel",
+          "text": "Bitte fragen Sie vorab, ob wir Ihr Modell anfertigen können."
+        },
+        {
+          "titel": "Sicherungskarte",
+          "text": "Für Schlüssel aus Schließanlagen mit Sicherungskarte bringen Sie bitte die Karte mit."
+        }
+      ],
+      "faq": [
+        {
+          "frage": "Brauche ich einen Termin?",
+          "antwort": "Nein, kommen Sie während der Öffnungszeiten vorbei."
+        },
+        {
+          "frage": "Können Sie jeden Schlüssel kopieren?",
+          "antwort": "Nicht jeden. Patentgeschützte Schlüssel können oft nur mit Sicherungskarte über den Hersteller nachbestellt werden. Wir beraten Sie gern."
+        }
+      ],
+      "panel_titel": "Schlüssel nachmachen.",
+      "panel_text": "Original mitbringen. Kopie mitnehmen.",
+      "thema": "gold"
+    },
+    {
+      "slug": "schliessanlagen",
+      "icon": "shield",
+      "titel": "Schließanlagen & Zylinder",
+      "kurz": "Beratung, Einbau, Sicherheit.",
+      "seo_title": "Schließzylinder & Schließanlagen – Beratung und Einbau | Service-Punkt Yakut",
+      "seo_desc": "Sicherheitszylinder und Schließanlagen für Privat, Hausverwaltungen und Firmen in Gensingen, Bad Kreuznach, Bingen und Alzey.",
+      "h1": "Schließanlagen & Sicherheitszylinder",
+      "lead": "Vom einzelnen Zylinder bis zur Schließanlage für Mehrfamilienhaus oder Betrieb – wir beraten Sie und bauen ein.",
+      "punkte": [
+        {
+          "titel": "Zylinder tauschen",
+          "text": "Nach Schlüsselverlust, Einzug oder Einbruch."
+        },
+        {
+          "titel": "Sicherheitszylinder",
+          "text": "Mit Bohr- und Ziehschutz für mehr Einbruchschutz."
+        },
+        {
+          "titel": "Schließanlagen",
+          "text": "Ein Schlüssel für die eigenen Türen, ein Generalschlüssel für alle – geplant nach Ihrem Bedarf."
+        },
+        {
+          "titel": "Hausverwaltungen & Firmen",
+          "text": "Feste Ansprechpartner und Rechnung."
+        }
+      ],
+      "faq": [
+        {
+          "frage": "Wie finde ich die richtige Zylinderlänge?",
+          "antwort": "Bringen Sie den alten Zylinder mit oder messen Sie von der Mitte der Befestigungsschraube nach außen und innen. Wir helfen gern."
+        }
+      ],
+      "panel_titel": "Sicherheit, die passt.",
+      "panel_text": "Zylinder und Schließanlagen – beraten und eingebaut.",
+      "thema": "steel"
+    },
+    {
+      "slug": "schuhreparatur",
+      "icon": "shoe",
+      "titel": "Schuhreparatur",
+      "kurz": "Absätze, Sohlen, Nähte, Pflege.",
+      "seo_title": "Schuhreparatur im Globus Gensingen – Absätze, Sohlen, Nähte",
+      "seo_desc": "Schuhreparatur in Gensingen: neue Absätze, Sohlen, Nähte und Schuhpflege. Service-Punkt Yakut im Globus Gensingen.",
+      "h1": "Schuhreparatur",
+      "lead": "Gute Schuhe verdienen ein zweites Leben. Bringen Sie sie einfach im Globus Gensingen vorbei.",
+      "punkte": [
+        {
+          "titel": "Absätze",
+          "text": "Neue Absätze und Absatzflecken für Damen- und Herrenschuhe."
+        },
+        {
+          "titel": "Sohlen",
+          "text": "Erneuerung von Laufsohlen."
+        },
+        {
+          "titel": "Nähte & Kleinreparaturen",
+          "text": "Nähte, Reißverschlüsse und kleinere Schäden."
+        },
+        {
+          "titel": "Pflege",
+          "text": "Reinigung und Pflege von Lederschuhen."
+        }
+      ],
+      "faq": [
+        {
+          "frage": "Wie lange dauert eine Reparatur?",
+          "antwort": "Kleine Arbeiten oft sofort, größere nach Absprache. Fragen Sie bei der Abgabe nach dem Abholtermin."
+        }
+      ],
+      "panel_titel": "Lieblingsschuhe. Wie neu.",
+      "panel_text": "Absätze, Sohlen, Nähte und Pflege.",
+      "thema": "leather"
+    },
+    {
+      "slug": "gravur",
+      "icon": "laser",
+      "titel": "Lasergravur & Geschenke",
+      "kurz": "Personalisiert, auch Einzelstücke.",
+      "seo_title": "Lasergravur & personalisierte Geschenke – Gensingen | Service-Punkt Yakut",
+      "seo_desc": "Lasergravur auf Holz, Metall, Kunststoff und Leder: Geschenke, Schlüsselanhänger, Schilder und Firmenlogos – auch Einzelstücke.",
+      "h1": "Lasergravur & personalisierte Geschenke",
+      "lead": "Namen, Daten, Logos oder Fotos – wir gravieren Einzelstücke und Serien für Privat- und Firmenkunden.",
+      "punkte": [
+        {
+          "titel": "Geschenke",
+          "text": "Personalisierte Geschenke zu Geburtstag, Hochzeit, Jubiläum."
+        },
+        {
+          "titel": "Schlüsselanhänger",
+          "text": "Mit Namen, Datum oder Logo."
+        },
+        {
+          "titel": "Gravurschilder",
+          "text": "Türschilder, Klingelschilder, Firmenschilder aus Kunststoff, Messing und Edelstahl."
+        },
+        {
+          "titel": "Firmenlogos",
+          "text": "Werbeartikel und Mitarbeitergeschenke in Serie."
+        }
+      ],
+      "faq": [
+        {
+          "frage": "In welchem Format soll ich mein Logo schicken?",
+          "antwort": "Am besten als Vektordatei (SVG, PDF, EPS). Gut aufgelöste PNG-Dateien gehen oft auch."
+        }
+      ],
+      "panel_titel": "Präzision per Laser.",
+      "panel_text": "Namen, Daten und Logos auf Holz, Metall, Leder und Kunststoff.",
+      "thema": "laser"
+    },
+    {
+      "slug": "stempel",
+      "icon": "stamp",
+      "titel": "Stempel & Schilder",
+      "kurz": "Firmenstempel, Gravurschilder.",
+      "seo_title": "Firmenstempel & Gravurschilder – Gensingen | Service-Punkt Yakut",
+      "seo_desc": "Firmenstempel, Adressstempel und Gravurschilder aus Kunststoff, Messing und Edelstahl – im Globus Gensingen und bald im Onlineshop.",
+      "h1": "Firmenstempel & Gravurschilder",
+      "lead": "Stempel mit Ihrem Text oder Logo und Schilder in Kunststoff, Messing oder Edelstahl.",
+      "punkte": [
+        {
+          "titel": "Firmenstempel",
+          "text": "Selbstfärbende Stempel mit Text und Logo."
+        },
+        {
+          "titel": "Adress- & Privatstempel",
+          "text": "Für Briefe, Vereine und Praxen."
+        },
+        {
+          "titel": "Kunststoffschilder",
+          "text": "Türschilder, Hinweisschilder, Namensschilder."
+        },
+        {
+          "titel": "Messing & Edelstahl",
+          "text": "Hochwertige Praxis-, Kanzlei- und Firmenschilder."
+        }
+      ],
+      "faq": [
+        {
+          "frage": "Kann ich online bestellen?",
+          "antwort": "Der Onlineshop ist in Vorbereitung. Bis dahin bestellen Sie bitte direkt im Laden."
+        }
+      ],
+      "panel_titel": "Firmenstempel & Schilder.",
+      "panel_text": "Mit Ihrem Text und Logo.",
+      "thema": "steel"
+    },
+    {
+      "slug": "pokale",
+      "icon": "trophy",
+      "titel": "Pokale & Medaillen",
+      "kurz": "Für Vereine und Firmen.",
+      "seo_title": "Pokale & Medaillen mit Gravur – für Vereine | Service-Punkt Yakut Gensingen",
+      "seo_desc": "Pokale, Medaillen und Ehrenpreise mit Gravur für Vereine, Turniere und Firmen in Gensingen, Bad Kreuznach, Bingen und Alzey.",
+      "h1": "Pokale & Medaillen",
+      "lead": "Für Turniere, Vereinsfeiern und Firmenevents – inklusive Gravur.",
+      "punkte": [
+        {
+          "titel": "Pokale",
+          "text": "Mit gravierter Plakette."
+        },
+        {
+          "titel": "Medaillen",
+          "text": "Gold, Silber, Bronze – mit individuellem Emblem."
+        },
+        {
+          "titel": "Ehrenpreise & Plaketten",
+          "text": "Für Jubiläen und Ehrungen."
+        },
+        {
+          "titel": "Vereine",
+          "text": "Frühzeitig anfragen – auch größere Stückzahlen."
+        }
+      ],
+      "faq": [
+        {
+          "frage": "Wie früh sollte ich bestellen?",
+          "antwort": "Je nach Menge – sprechen Sie uns am besten ein bis zwei Wochen vor dem Termin an."
+        }
+      ],
+      "panel_titel": "Pokale & Medaillen.",
+      "panel_text": "Für Turniere, Vereine und Firmenfeiern.",
+      "thema": "gold"
+    }
+  ]
+}

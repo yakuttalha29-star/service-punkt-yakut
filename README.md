@@ -8,10 +8,12 @@ Statische Seiten mit dunklem, minimalistischem Design. Sie laufen kostenlos auf 
 | Pfad | Inhalt |
 |---|---|
 | `data/firma.json` | **Einzige Quelle** für Firmendaten (Adresse, Telefon, Öffnungszeiten …). `null` = noch nicht geliefert. |
-| `tools/build.py` | Erzeugt alle Seiten aus `firma.json` und den Leistungstexten (im Skript, Abschnitt `LEISTUNGEN`). |
+| `data/leistungen.json` | Texte der 7 Leistungen (Startseite + Unterseiten). |
+| `tools/build.py` | Erzeugt alle Seiten aus `firma.json` und `leistungen.json`. |
+| `assets/img/<slug>.jpg` | Optional: echte Fotos, z. B. `gravur.jpg`. Ersetzen automatisch die Illustration. |
 | `public/` | **Erzeugte** Website, nur dieser Ordner wird veröffentlicht. Nicht von Hand bearbeiten, sondern `build.py` ausführen. |
-| `entwurf/impressum.html` | Impressum-**Entwurf**, liegt außerhalb von `public/` und wird nie automatisch veröffentlicht. |
-| `assets/styles.css` | Design (Farben als Variablen in `:root`). |
+| `entwurf/` | Impressum und Datenschutz als **Entwurf**. Erst veröffentlicht, wenn alle Angaben vollständig sind und in `firma.json` `"rechtstexte_freigegeben": true` steht. |
+| `assets/styles.css` | Design im Apple-Stil (Farben als Variablen in `:root`). Nur Systemschriften, keine Google Fonts. |
 | `data/shop-katalog.json` | Produktstruktur für den Shopify-Import. **Preise sind Beispiele.** |
 | `docs/` | Bestandsaufnahme, Plan, Entscheidungen. |
 
