@@ -51,19 +51,20 @@
 - **WooCommerce:** Hosting ca. 5–15 €/Monat, Plugins teils kostenpflichtig, Updates und Sicherheit sind Daueraufwand.
 - Empfehlung: **Shopify**, weil der Inhaber im Laden arbeitet und keine Server pflegen soll. Preise vor Buchung tagesaktuell prüfen.
 
-## 4. Was bereits umgesetzt ist (lokal, nicht veröffentlicht)
+## 4. Stand der Umsetzung (lokal, nicht veröffentlicht)
 
-- `index.html` + `assets/styles.css`: neue Startseite, dunkles Design, 7 Kacheln, Notdienst-Leiste, Anruf-Button, Schema.org-Daten (`Locksmith`).
-  Geprüft mit Chromium: iPhone 13 → alle 7 Kacheln im ersten Bildschirm, kein horizontales Scrollen; Desktop 1280 px → alle Kacheln sichtbar.
-- `data/shop-katalog.json`: Struktur für Kategorien, Varianten, Gravurtext, Logo-Upload, Staffelpreise. **Alle Preise sind Beispieldaten.**
+**Update 04.11.2026 (2. Runde)**
+- Firmendaten zentral in `data/firma.json`. Fehlende Angaben (Telefon, Notdienst, E-Mail, Straße, Inhaber, USt-IdNr.) bleiben `null` und werden als „folgt“ angezeigt.
+- 7 Leistungsseiten unter `leistungen/` mit FAQ-Strukturdaten, erzeugt durch `tools/build.py`.
+- `shop/index.html`: Hinweis „Onlineshop in Vorbereitung“ (noindex).
+- `impressum-entwurf.html`: Entwurf nach § 5 DDG, fehlende Pflichtfelder rot markiert, noindex. **Nicht veröffentlichen.**
+- Geprüft mit Chromium (iPhone 13): kein horizontales Scrollen, gültiges JSON-LD, keine JS-Fehler. Bewusst noch ohne Ziel: `impressum.html`, `datenschutz.html`.
+- Inhaber-Entscheidung: **Shopify**. Domain liegt bei **IONOS**, die bisherige Seite wurde mit ChatGPT erstellt.
 
-**Noch offen:** Unterseiten (`leistungen/*.html`, `shop/`, Impressum, Datenschutz, AGB) existieren noch nicht. Die Links führen ins Leere.
+## 5. Vom Inhaber noch benötigt
 
-## 5. Vom Inhaber benötigt
-
-1. Telefonnummer, Notdienstnummer, WhatsApp, E-Mail, genaue Adresse
-2. Wer betreut yakut-service.de, mit welchem System? Zugang zum Code oder Hosting?
-3. Netzwerkfreigabe dieser Umgebung für `yakut-service.de` (damit die Seite analysiert werden kann)
-4. Ein GitHub-Repository, damit die Arbeit dauerhaft gespeichert wird
+1. Telefon, Notdienstnummer, E-Mail, Straße & Hausnummer, Vor- und Nachname des Inhabers, ggf. USt-IdNr., ggf. Handwerkskammer
+2. Bestätigung der Öffnungszeiten Mo–Sa 09–18 Uhr
+3. GitHub-Verbindung und das private Repository `service-punkt-yakut`
+4. Netzwerkfreigabe für `yakut-service.de` und `service-punkt-yakut.cocoajam512.chatgpt.site`
 5. Echte Fotos (Laden, Gravurbeispiele, Schuhreparaturen)
-6. Shop-Entscheidung: Shopify oder WooCommerce

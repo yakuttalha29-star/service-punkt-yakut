@@ -1,0 +1,28 @@
+{
+  "_hinweis": "Einzige Quelle für Firmendaten. null = vom Inhaber noch nicht geliefert. Niemals Werte erfinden.",
+  "name": "Service-Punkt Yakut – Schuh- & Schlüsseldienst Yakut",
+  "name_kurz": "Service-Punkt Yakut",
+  "standort": "im Globus Gensingen",
+  "standort_detail": "direkt an der Information beim Hintereingang",
+  "strasse": null,
+  "plz": "55457",
+  "ort": "Gensingen",
+  "inhaber": null,
+  "telefon": null,
+  "notdienst": null,
+  "email": null,
+  "ust_id": null,
+  "kammer": null,
+  "streitbeilegung": null,
+  "oeffnungszeiten": {
+    "_status": "vom Inhaber vor Veröffentlichung zu bestätigen",
+    "text": "Montag bis Samstag 09:00–18:00 Uhr",
+    "kurz": "Mo–Sa 09–18 Uhr",
+    "von": "09:00",
+    "bis": "18:00"
+  },
+  "website": "https://yakut-service.de/",
+  "instagram": "https://www.instagram.com/service.punkt/",
+  "whatsapp_kanal": "https://whatsapp.com/channel/0029VbCdUwTBfxo1BzQQBK2D",
+  "einzugsgebiet": ["Gensingen", "Bad Kreuznach", "Bingen", "Langenlonsheim", "Planig", "Wörrstadt", "Alzey"]
+}

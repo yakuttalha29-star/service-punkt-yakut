@@ -52,7 +52,7 @@ main{max-width:var(--max);margin:0 auto;padding:0 16px}
 .fab{position:fixed;right:16px;bottom:16px;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;
   background:var(--accent);text-decoration:none;font-size:24px;box-shadow:0 8px 24px rgba(0,0,0,.5)}
 @media(min-width:900px){.fab{display:none}}
-@media(max-width:560px){.nav nav a:not([href="shop/"]):not([href="#kontakt"]){display:none}}
+@media(max-width:560px){.nav nav a:not(.nav-keep){display:none}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 
 /* Mobil: alle Leistungen möglichst ohne Scrollen erreichbar */
@@ -74,3 +74,31 @@ main{max-width:var(--max);margin:0 auto;padding:0 16px}
   .tile-urgent{grid-column:1/-1;flex-direction:row;align-items:center;gap:10px}
   .tile-urgent p{margin-left:auto}
 }
+
+/* Fehlende Angaben sichtbar, aber nicht klickbar */
+.is-missing{opacity:.55;cursor:not-allowed}
+.emergency .is-missing{background:#5a1f1a;color:#fff;padding:4px 12px;border-radius:999px;font-weight:600;white-space:nowrap}
+.btn-urgent{background:var(--urgent);color:#fff}
+
+/* Unterseiten */
+.crumbs{font-size:13px;color:var(--muted);padding:16px 0 0}.crumbs a{color:var(--muted)}
+.page-hero{text-align:center;padding:32px 0 24px}
+.page-hero .ico{font-size:40px}
+.page-hero h1{font-size:clamp(28px,5vw,48px);letter-spacing:-.03em;line-height:1.1;margin:8px 0}
+.actions.center{justify-content:center;margin-top:20px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;padding:16px 0 40px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.card h3{font-size:17px;margin-bottom:6px}.card p{color:var(--muted);font-size:15px}
+.faq,.more{padding:0 0 40px}.faq h2,.more h2{font-size:22px;letter-spacing:-.02em;margin-bottom:12px}
+.faq details{border-top:1px solid var(--line);padding:14px 0}
+.faq summary{cursor:pointer;font-weight:600}.faq details p{color:var(--muted);margin-top:8px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips a{text-decoration:none;font-size:14px;padding:8px 14px;border-radius:999px;border:1px solid var(--line);color:var(--muted)}
+.chips a:hover{color:var(--text);border-color:#3a3a42}
+
+/* Rechtstexte / Entwurf */
+.legal{max-width:720px;padding:32px 0 56px}.legal h1{font-size:32px;margin-bottom:16px}
+.legal h2{font-size:17px;margin:24px 0 6px}.legal p{color:var(--muted)}
+.draft-banner{background:#3a2a00;color:#ffd666!important;border:1px solid #6b4f00;padding:12px 16px;border-radius:12px;font-weight:600}
+mark.missing{background:#5a1f1a;color:#ffd7d3;padding:0 4px;border-radius:4px}
+.is-missing-text{color:#ff8a80}
