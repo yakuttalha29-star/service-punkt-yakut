@@ -1,0 +1,29 @@
+{
+  "_hinweis": "ENTWURF – Produkte, Preise und Lieferzeiten sind BEISPIELDATEN und müssen vom Inhaber geprüft werden.",
+  "versand": {"standard_de_eur": 4.90, "versandkostenfrei_ab_eur": 50, "_status": "Beispielwerte"},
+  "kategorien": [
+    {"id": "stempel", "name": "Firmenstempel"},
+    {"id": "schilder", "name": "Gravurschilder"},
+    {"id": "anhaenger", "name": "Personalisierte Schlüsselanhänger"},
+    {"id": "geschenke", "name": "Gravierte Geschenkartikel"},
+    {"id": "pokale", "name": "Pokale & Medaillen"}
+  ],
+  "produkte": [
+    {"sku": "ST-SELBST-01", "kategorie": "stempel", "name": "Selbstfärbender Firmenstempel",
+     "varianten": [{"groesse": "38×14 mm", "preis_eur": 24.90}, {"groesse": "47×18 mm", "preis_eur": 29.90}, {"groesse": "58×22 mm", "preis_eur": 34.90}],
+     "personalisierung": {"textzeilen_max": 5, "logo_upload": true, "dateiformate": ["svg", "pdf", "png"]}},
+    {"sku": "SC-ALU-01", "kategorie": "schilder", "name": "Türschild Aluminium graviert",
+     "varianten": [{"groesse": "100×30 mm", "preis_eur": 14.90}, {"groesse": "150×50 mm", "preis_eur": 22.90}],
+     "personalisierung": {"textzeilen_max": 3, "logo_upload": true, "dateiformate": ["svg", "pdf", "png"]}},
+    {"sku": "AH-LEDER-01", "kategorie": "anhaenger", "name": "Leder-Schlüsselanhänger mit Gravur",
+     "varianten": [{"farbe": "Braun", "preis_eur": 12.90}, {"farbe": "Schwarz", "preis_eur": 12.90}],
+     "personalisierung": {"textzeilen_max": 2, "zeichen_max": 20, "logo_upload": false}},
+    {"sku": "GE-HOLZ-01", "kategorie": "geschenke", "name": "Holz-Schneidebrett mit Gravur",
+     "varianten": [{"groesse": "30×20 cm", "preis_eur": 29.90}],
+     "personalisierung": {"textzeilen_max": 3, "logo_upload": true, "dateiformate": ["svg", "png", "jpg"]}},
+    {"sku": "PO-MED-01", "kategorie": "pokale", "name": "Medaille mit gravierter Plakette",
+     "varianten": [{"farbe": "Gold", "preis_eur": 6.90}, {"farbe": "Silber", "preis_eur": 6.90}, {"farbe": "Bronze", "preis_eur": 6.90}],
+     "staffelpreise": [{"ab_stueck": 10, "rabatt_prozent": 10}, {"ab_stueck": 25, "rabatt_prozent": 15}],
+     "personalisierung": {"textzeilen_max": 3, "logo_upload": true, "dateiformate": ["svg", "pdf", "png"]}}
+  ]
+}
