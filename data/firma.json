@@ -9,7 +9,7 @@
   "ort": "Gensingen",
   "inhaber": "Talha Yakut",
   "telefon": "0179 5056633",
-  "notdienst": null,
+  "notdienst": "0179 5056633",
   "email": "service.yakut@gmail.com",
   "ust_id": null,
   "kammer": false,
@@ -33,5 +33,5 @@
     "Wörrstadt",
     "Alzey"
   ],
-  "_offen": "Notdienstnummer (gleich wie Telefon?), USt-IdNr. (Nummer fehlt), Kleinunternehmer? Kammer: laut Inhaber keine Post von der HWK erhalten (04.11.2026)"
+  "_offen": "USt-IdNr. (Inhaber sucht sie), Kleinunternehmer?, Rechtstexte-Dienst (Entscheidung offen)"
 }
