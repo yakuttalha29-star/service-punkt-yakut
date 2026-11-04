@@ -12,7 +12,7 @@
   "notdienst": null,
   "email": "service.yakut@gmail.com",
   "ust_id": null,
-  "kammer": null,
+  "kammer": false,
   "streitbeilegung": null,
   "oeffnungszeiten": {
     "_status": "vom Inhaber bestätigt am 04.11.2026 (Laden); Notdienst 24/7 separat",
@@ -33,5 +33,5 @@
     "Wörrstadt",
     "Alzey"
   ],
-  "_offen": "Notdienstnummer (gleich wie Telefon?), USt-IdNr. (Nummer fehlt), Kleinunternehmer?, Handwerkskammer?"
+  "_offen": "Notdienstnummer (gleich wie Telefon?), USt-IdNr. (Nummer fehlt), Kleinunternehmer? Kammer: laut Inhaber keine Post von der HWK erhalten (04.11.2026)"
 }

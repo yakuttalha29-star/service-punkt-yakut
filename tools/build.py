@@ -281,6 +281,9 @@ def impressum_entwurf():
     def feld(key, label):
         v = val(key, label)
         return e(v) if v else f'<mark class="missing">[{e(label)} fehlt]</mark>'
+    # kammer: false = laut Inhaber keine Kammer-Eintragung -> Abschnitt entfällt
+    kammer_abschnitt = "" if FIRMA.get("kammer") is False else (
+        f'<h2>Handwerksrolle / Kammer</h2><p>{feld("kammer", "Zuständige Handwerkskammer bzw. IHK und ggf. Eintragung")}</p>')
     body = f"""
 <section class="legal">
   <p class="draft-banner">ENTWURF – nicht veröffentlichen. Fehlende Angaben sind markiert. Vor Veröffentlichung rechtlich prüfen lassen (z. B. über einen Rechtstexte-Dienst).</p>
@@ -295,8 +298,7 @@ def impressum_entwurf():
   <p>Telefon: {feld("telefon", "Telefon")}<br>E-Mail: {feld("email", "E-Mail")}</p>
   <h2>Umsatzsteuer</h2>
   <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG: {feld("ust_id", "USt-IdNr. (falls vorhanden – sonst Zeile entfernen; bei Kleinunternehmer klären)")}</p>
-  <h2>Handwerksrolle / Kammer</h2>
-  <p>{feld("kammer", "Zuständige Handwerkskammer bzw. IHK und ggf. Eintragung – falls zutreffend, sonst Abschnitt entfernen")}</p>
+  {kammer_abschnitt}
   <h2>Verbraucherstreitbeilegung</h2>
   <p>{feld("streitbeilegung", "Erklärung nach § 36 VSBG – Formulierung mit Rechtstexte-Dienst abstimmen")}</p>
 </section>"""
