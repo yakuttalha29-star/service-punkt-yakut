@@ -24,7 +24,7 @@
 1. Code ins GitHub-Repo pushen (vollständiger Verlauf aus der ZIP-Sicherung)
 2. Inhaber gibt Impressum/Datenschutz frei (oder lässt sie über einen Rechtstexte-Dienst prüfen)
 3. Cloudflare Pages mit GitHub verbinden: Build `python3 tools/build.py`, Output `public`
-4. Auftragsverarbeitungsvertrag (DPA) im Cloudflare-Konto annehmen
+4. Auftragsverarbeitungsvertrag (DPA) im Cloudflare-Konto prüfen/annehmen (Datenschutzerklärung nennt Cloudflare als Auftragsverarbeiter)
 5. IONOS-DNS: `www` CNAME → `<projekt>.pages.dev`, Root → www weiterleiten, **MX nicht ändern**
 6. Echte Fotos einbauen (`assets/img/<slug>.jpg`)
 7. Danach: Google-Unternehmensprofil, Ortsseiten, später Shopify
