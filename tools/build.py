@@ -347,8 +347,9 @@ def impressum(live):
   <h2>Kontakt</h2>
   <p>Telefon: {feld("telefon", "Telefon")}<br>E-Mail: {feld("email", "E-Mail")}</p>
   {ust}{kammer}
-  <h2>Verbraucherstreitbeilegung</h2>
-  <p>Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+  <h2>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
+  <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+  <p class="muted">Quelle: <a href="https://www.e-recht24.de" rel="noopener">https://www.e-recht24.de</a></p>
 </section>"""
     if live:
         page("impressum.html", "Impressum | Service-Punkt Yakut", "Impressum von Service-Punkt Yakut.", body, noindex=True)
