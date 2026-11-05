@@ -33,6 +33,7 @@
     "Wörrstadt",
     "Alzey"
   ],
-  "_offen": "Rechtstexte-Freigabe durch Inhaber; Auftragsverarbeitungsvertrag Cloudflare; Kleinunternehmer?",
-  "_ust_hinweis": "Inhaber hat derzeit keine USt-IdNr. (Stand 05.11.2026). Steuernummer NICHT veröffentlichen. USt-IdNr. nachtragen, sobald vorhanden (dann Wert statt false eintragen)."
+  "_offen": "Datenschutzerklärung: Generator-Text abgleichen + Freigabe; danach rechtstexte_freigegeben=true. AV-Vertrag Cloudflare. Kleinunternehmer?",
+  "_ust_hinweis": "Inhaber hat derzeit keine USt-IdNr. (Stand 05.11.2026). Steuernummer NICHT veröffentlichen. USt-IdNr. nachtragen, sobald vorhanden (dann Wert statt false eintragen).",
+  "impressum_freigegeben": "2026-11-05 vom Inhaber freigegeben (abgeglichen mit eRecht24-Generator)"
 }
