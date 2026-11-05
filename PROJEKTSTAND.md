@@ -24,6 +24,12 @@
 - Seit 05.11.2026 online: https://service-punkt-yakut.service-yakut.workers.dev (Cloudflare Workers mit statischen Dateien, Konfiguration in `wrangler.jsonc`, Build `python3 tools/build.py`, Deploy `npx wrangler deploy`). Jeder Push auf `main` veröffentlicht automatisch.
 - Impressum und Datenschutz am 05.11.2026 vom Inhaber freigegeben.
 
+## Domain (05.11.2026)
+- yakut-service.de: Nameserver bei IONOS auf Cloudflare umgestellt (mark/raina.ns.cloudflare.com), Zone aktiv. Domain-Registrierung bleibt bei IONOS.
+- Custom Domains am Worker: `yakut-service.de` und `www.yakut-service.de`.
+- Alte IONOS-Einträge A/AAAA für @ sollten gelöscht sein. MX/TXT/CNAME (IONOS-Mail, SPF, DMARC) unverändert gelassen.
+- Fotos online: Schuhreparatur, Gravur (Google-Schild), Stempel (alte Festnetznummer 06727/3819957 unkenntlich – NICHT mehr aktuell).
+
 ## Nächste Schritte
 1. Code ins GitHub-Repo pushen (vollständiger Verlauf aus der ZIP-Sicherung)
 2. Inhaber gibt Impressum/Datenschutz frei (oder lässt sie über einen Rechtstexte-Dienst prüfen)
