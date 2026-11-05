@@ -30,6 +30,10 @@
 - Alte IONOS-Einträge A/AAAA für @ sollten gelöscht sein. MX/TXT/CNAME (IONOS-Mail, SPF, DMARC) unverändert gelassen.
 - Fotos online: Schuhreparatur, Gravur (Google-Schild), Stempel (alte Festnetznummer 06727/3819957 unkenntlich – NICHT mehr aktuell).
 
+## Google (05.11.2026)
+- Google-Unternehmensprofil vom Inhaber aktualisiert (Website, Telefon, Zeiten, Kategorien, Beschreibung).
+- Google Search Console: Domain-Property yakut-service.de per Cloudflare bestätigt, Sitemap https://yakut-service.de/sitemap.xml eingereicht.
+
 ## Nächste Schritte
 1. Code ins GitHub-Repo pushen (vollständiger Verlauf aus der ZIP-Sicherung)
 2. Inhaber gibt Impressum/Datenschutz frei (oder lässt sie über einen Rechtstexte-Dienst prüfen)
