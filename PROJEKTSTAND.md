@@ -20,6 +20,10 @@
 - Cloudflare: Konto angelegt (Free). E-Mail-Bestätigung war ausstehend. Noch kein Projekt anlegen.
 - GitHub: Benutzer `yakuttalha29-star`, privates Repo `service-punkt-yakut`. In der ersten Sitzung war kein Zugriff möglich.
 
+## Live (Test-Adresse)
+- Seit 05.11.2026 online: https://service-punkt-yakut.service-yakut.workers.dev (Cloudflare Workers mit statischen Dateien, Konfiguration in `wrangler.jsonc`, Build `python3 tools/build.py`, Deploy `npx wrangler deploy`). Jeder Push auf `main` veröffentlicht automatisch.
+- Impressum und Datenschutz am 05.11.2026 vom Inhaber freigegeben.
+
 ## Nächste Schritte
 1. Code ins GitHub-Repo pushen (vollständiger Verlauf aus der ZIP-Sicherung)
 2. Inhaber gibt Impressum/Datenschutz frei (oder lässt sie über einen Rechtstexte-Dienst prüfen)
