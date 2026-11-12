@@ -40,6 +40,7 @@
 - Technik steht: Originale nach `fotos/quelle/ki/`, dann `python3 tools/medien.py` und `python3 tools/build.py`. WebP/srcset, Video stumm und nur bei Sichtbarkeit, KI-Kennzeichnung („Symbolbild“ + Hinweis im Fuß).
 - Die drei echten Fotos liegen jetzt in `fotos/quelle/echt/` und werden als WebP ausgeliefert.
 - Kein KI-Vorher-Nachher (irreführend), dafür echte Fotos.
+- Vom Inhaber geliefert und eingebaut (12.11.2026): KI-Bilder `gravur`, `schliessanlagen`, `schuhreparatur`, `schluessel` (je 1402×1122). Entscheidung Inhaber: KI-Bilder ersetzen die echten Fotos. Noch offen: `hero`, `tueroeffnung`, `stempel` (derzeit echtes Foto), `pokale`, `shop`, Videos.
 
 ## Nächste Schritte
 1. Code ins GitHub-Repo pushen (vollständiger Verlauf aus der ZIP-Sicherung)

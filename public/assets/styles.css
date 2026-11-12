@@ -203,9 +203,9 @@ mark.missing{background:#5a1f1a;color:#ffd7d3;padding:1px 6px;border-radius:5px}
   .hero .hero-ctas{display:none}
 }
 
-/* Echte Fotos in den Produktflächen: quadratisch, zentriert, wie ein Produktbild */
-.panel .photo{width:min(100%,520px);height:auto;aspect-ratio:1/1;object-fit:cover;border-radius:22px;margin:32px auto clamp(32px,5vw,56px)}
-.sub-art.photo{width:min(100%,560px);height:auto;aspect-ratio:1/1;object-fit:cover;margin:16px auto 32px}
+/* Fotos in den Produktflächen: zentriert, im eigenen Seitenverhältnis (aus width/height), wie ein Produktbild */
+.panel .photo{width:min(100%,520px);height:auto;object-fit:cover;border-radius:22px;margin:32px auto clamp(32px,5vw,56px)}
+.sub-art.photo{width:min(100%,560px);height:auto;object-fit:cover;margin:16px auto 32px}
 
 /* Medien: <picture> ist nur Hülle, das <img>/<video> darin trägt das Layout */
 picture{display:contents}

@@ -3,21 +3,45 @@
   "breiten": [
    480,
    800,
-   1200
+   1200,
+   1402
   ],
-  "h": 1200,
-  "ki": false,
-  "w": 1200
+  "h": 1122,
+  "ki": true,
+  "w": 1402
+ },
+ "schliessanlagen": {
+  "breiten": [
+   480,
+   800,
+   1200,
+   1402
+  ],
+  "h": 1122,
+  "ki": true,
+  "w": 1402
+ },
+ "schluessel": {
+  "breiten": [
+   480,
+   800,
+   1200,
+   1402
+  ],
+  "h": 1122,
+  "ki": true,
+  "w": 1402
  },
  "schuhreparatur": {
   "breiten": [
    480,
    800,
-   1200
+   1200,
+   1402
   ],
-  "h": 1200,
-  "ki": false,
-  "w": 1200
+  "h": 1122,
+  "ki": true,
+  "w": 1402
  },
  "stempel": {
   "breiten": [
