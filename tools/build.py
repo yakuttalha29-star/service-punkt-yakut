@@ -10,7 +10,9 @@ Regeln:
   von public/. Sie werden erst veröffentlicht, wenn firma.json "rechtstexte_freigegeben": true
   enthält UND keine Pflichtangabe mehr fehlt.
 - Keine externen Skripte, Schriften oder Tracker: nichts, was Daten an Dritte sendet.
-- Fotos: liegt assets/img/<slug>.jpg vor, wird es statt der Illustration gezeigt.
+- Bilder/Videos: Originale liegen in fotos/quelle/, `python3 tools/medien.py` erzeugt daraus assets/img/
+  und assets/video/ samt assets/img/medien.json. Gibt es zu einem Namen (Slug, "hero", "shop") ein Medium,
+  wird es statt der Illustration gezeigt. KI-Bilder werden als Symbolbilder gekennzeichnet.
 """
 import html
 import json
@@ -22,6 +24,9 @@ OUT = ROOT / "public"
 ENTWURF = ROOT / "entwurf"
 FIRMA = json.loads((ROOT / "data" / "firma.json").read_text(encoding="utf-8"))
 LEISTUNGEN = json.loads((ROOT / "data" / "leistungen.json").read_text(encoding="utf-8"))["leistungen"]
+_MEDIEN_DATEI = ROOT / "assets" / "img" / "medien.json"
+MEDIEN = json.loads(_MEDIEN_DATEI.read_text(encoding="utf-8")) if _MEDIEN_DATEI.exists() else {}
+MEDIEN_TEXTE = json.loads((ROOT / "data" / "medien.json").read_text(encoding="utf-8"))["medien"]
 WARN = set()
 
 def e(s):
@@ -72,12 +77,44 @@ def maps_href():
     q = f'{FIRMA["name_kurz"]} Globus {FIRMA.get("strasse") or ""} {FIRMA["plz"]} {FIRMA["ort"]}'
     return "https://www.google.com/maps/search/?api=1&query=" + "+".join(q.split())
 
+GROESSEN = {  # Angabe für den Browser, wie breit das Bild dargestellt wird (für srcset)
+    "art": "(max-width: 560px) 92vw, 520px",
+    "sub-art": "(max-width: 600px) 92vw, 560px",
+    "hero-media": "(max-width: 1200px) 100vw, 1200px",
+}
+
+def medium(name, cls, alt_echt, eager=False):
+    """Bild (WebP in mehreren Größen, JPEG als Rückfall) oder Video mit Vorschaubild. None, wenn nichts vorliegt."""
+    m = MEDIEN.get(name)
+    if not m:
+        return None
+    alt = MEDIEN_TEXTE.get(name, {}).get("alt_ki") if m["ki"] else alt_echt
+    alt = alt or alt_echt.replace(" bei Service-Punkt Yakut", "")
+    if m["ki"]:
+        alt += " (Symbolbild)"
+    jpg_b = min(m["w"], 1200)
+    w, h = jpg_b, round(m["h"] * jpg_b / m["w"])
+    if m.get("video"):
+        # Startet erst per site.js, wenn sichtbar – und nicht bei „Bewegung reduzieren“. Ohne Ton.
+        return (f'<video class="{cls} photo" muted loop playsinline preload="none" poster="/assets/img/{name}.jpg" '
+                f'width="{w}" height="{h}" aria-label="{e(alt)}" data-auto>'
+                f'<source src="/assets/video/{name}.mp4" type="video/mp4"></video>')
+    srcset = ", ".join(f"/assets/img/{name}-{b}.webp {b}w" for b in m["breiten"])
+    laden = 'loading="eager"' if eager else 'loading="lazy"'
+    return (f'<picture><source type="image/webp" srcset="{srcset}" sizes="{GROESSEN[cls]}">'
+            f'<img class="{cls} photo" src="/assets/img/{name}.jpg" alt="{e(alt)}" width="{w}" height="{h}" '
+            f'{laden} decoding="async"></picture>')
+
 def foto_oder_bild(l, cls="art"):
-    """Echtes Foto, falls vorhanden – sonst Illustration (Icon mit Lichtschein)."""
-    foto = ROOT / "assets" / "img" / f'{l["slug"]}.jpg'
-    if foto.exists():
-        return f'<img class="{cls} photo" src="/assets/img/{l["slug"]}.jpg" alt="{e(l["titel"])} bei Service-Punkt Yakut" loading="lazy" decoding="async">'
-    return f'<div class="{cls} glow t-{l["thema"]}">{icon(l["icon"], "art-icon")}</div>'
+    """Foto/Video, falls vorhanden – sonst Illustration (Icon mit Lichtschein)."""
+    return (medium(l["slug"], cls, f'{l["titel"]} bei Service-Punkt Yakut')
+            or f'<div class="{cls} glow t-{l["thema"]}">{icon(l["icon"], "art-icon")}</div>')
+
+def ki_hinweis():
+    if any(m["ki"] for m in MEDIEN.values()):
+        return ('<p class="fine">Bildhinweis: Einige Bilder und Videos sind KI-generierte Symbolbilder. '
+                'Sie zeigen keine Aufnahmen aus unserem Laden und keine tatsächlichen Kundenarbeiten.</p>')
+    return ""
 
 def page(path, title, desc, body, noindex=False, extra_head="", ziel=None):
     robots = '<meta name="robots" content="noindex,nofollow">\n' if noindex else ""
@@ -150,6 +187,7 @@ def page(path, title, desc, body, noindex=False, extra_head="", ziel=None):
       <div><h3>Rechtliches</h3><ul>{rechtliches}</ul></div>
     </div>
     <p class="fine">Einsatzgebiet: {" · ".join(e(o) for o in FIRMA["einzugsgebiet"])}</p>
+    {ki_hinweis()}
     <p class="fine">© {e(FIRMA["name"])}</p>
   </div>
 </footer>
@@ -216,6 +254,8 @@ def startseite():
     if FIRMA.get("strasse"): ld["address"]["streetAddress"] = FIRMA["strasse"]
 
     tel = tel_href()
+    hm = medium("hero", "hero-media", "Schlüssel, Schuhe und Gravur bei Service-Punkt Yakut", eager=True)
+    hero_medium = f'<div class="hero-stage reveal">{hm}</div>' if hm else ""
     body = f"""
 <section class="hero">
   <p class="hero-kicker">Service‑Punkt Yakut · Globus Gensingen</p>
@@ -225,6 +265,7 @@ def startseite():
 </section>
 
 <nav class="chips" id="leistungen" aria-label="Alle Leistungen">{chips}</nav>
+{hero_medium}
 
 {panel(by["tueroeffnung"])}
 {panel(by["schluessel"])}
@@ -296,7 +337,7 @@ def leistung_seite(l):
 def shop_platzhalter():
     body = f"""
 <section class="sub-hero">
-  <div class="sub-art glow t-gold">{icon("cart", "art-icon")}</div>
+  {medium("shop", "sub-art", "Personalisierte Produkte von Service-Punkt Yakut") or f'<div class="sub-art glow t-gold">{icon("cart", "art-icon")}</div>'}
   <p class="hero-kicker">Onlineshop</p>
   <h1>Bald auch online.</h1>
   <p class="hero-sub">Firmenstempel, Gravurschilder, Schlüsselanhänger, Pokale und personalisierte Geschenke – mit Ihrem Text und Logo, deutschlandweit geliefert.</p>
@@ -446,8 +487,10 @@ def statische_dateien():
     (OUT / "assets").mkdir(parents=True)
     for f in ("styles.css", "site.js"):
         shutil.copy2(ROOT / "assets" / f, OUT / "assets" / f)
-    if (ROOT / "assets" / "img").exists():
-        shutil.copytree(ROOT / "assets" / "img", OUT / "assets" / "img")
+    for ordner in ("img", "video"):
+        if (ROOT / "assets" / ordner).exists():
+            shutil.copytree(ROOT / "assets" / ordner, OUT / "assets" / ordner,
+                            ignore=shutil.ignore_patterns("medien.json", ".*"))
     (OUT / "assets" / "favicon.svg").write_text(FAVICON, encoding="utf-8")
     # JSON-LD-Blöcke werden nicht ausgeführt und fallen nicht unter script-src.
     (OUT / "_headers").write_text(HEADERS, encoding="utf-8")

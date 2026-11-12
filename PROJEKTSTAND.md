@@ -34,6 +34,13 @@
 - Google-Unternehmensprofil vom Inhaber aktualisiert (Website, Telefon, Zeiten, Kategorien, Beschreibung).
 - Google Search Console: Domain-Property yakut-service.de per Cloudflare bestätigt, Sitemap https://yakut-service.de/sitemap.xml eingereicht.
 
+## KI-Bildwelt (12.11.2026, Branch `claude/blissful-meitner-02d7vf`, noch nicht auf `main`)
+- Inhaber wünscht exklusive, fotorealistische KI-Bilder und kurze Videos (heller Luxus-Studio-Stil) für Hero, Kacheln, Unterseiten, Shop.
+- In der Cloud-Sitzung gab es keinen Bild-/Videogenerator. Deshalb: fertige Prompts in `docs/KI-BILDER-PROMPTS.md`, noch KEINE KI-Bilder erzeugt.
+- Technik steht: Originale nach `fotos/quelle/ki/`, dann `python3 tools/medien.py` und `python3 tools/build.py`. WebP/srcset, Video stumm und nur bei Sichtbarkeit, KI-Kennzeichnung („Symbolbild“ + Hinweis im Fuß).
+- Die drei echten Fotos liegen jetzt in `fotos/quelle/echt/` und werden als WebP ausgeliefert.
+- Kein KI-Vorher-Nachher (irreführend), dafür echte Fotos.
+
 ## Nächste Schritte
 1. Code ins GitHub-Repo pushen (vollständiger Verlauf aus der ZIP-Sicherung)
 2. Inhaber gibt Impressum/Datenschutz frei (oder lässt sie über einen Rechtstexte-Dienst prüfen)

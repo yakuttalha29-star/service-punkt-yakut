@@ -10,7 +10,10 @@ Statische Seiten mit dunklem, minimalistischem Design. Sie laufen kostenlos auf 
 | `data/firma.json` | **Einzige Quelle** für Firmendaten (Adresse, Telefon, Öffnungszeiten …). `null` = noch nicht geliefert. |
 | `data/leistungen.json` | Texte der 7 Leistungen (Startseite + Unterseiten). |
 | `tools/build.py` | Erzeugt alle Seiten aus `firma.json` und `leistungen.json`. |
-| `assets/img/<slug>.jpg` | Optional: echte Fotos, z. B. `gravur.jpg`. Ersetzen automatisch die Illustration. |
+| `fotos/quelle/echt/`, `fotos/quelle/ki/` | Originale: echte Fotos bzw. KI-Symbolbilder und -Videos. Name = Slug der Leistung, `hero` oder `shop`. |
+| `tools/medien.py` | Erzeugt aus den Originalen `assets/img/` (WebP in mehreren Größen, JPEG) und `assets/video/`. Braucht Pillow und ffmpeg, läuft nur lokal. Danach `build.py` ausführen. |
+| `data/medien.json` | Alternativtexte für die KI-Symbolbilder. |
+| `docs/KI-BILDER-PROMPTS.md` | Prompts für die KI-Bildwelt und Anleitung zum Einbau. |
 | `public/` | **Erzeugte** Website, nur dieser Ordner wird veröffentlicht. Nicht von Hand bearbeiten, sondern `build.py` ausführen. |
 | `entwurf/` | Impressum und Datenschutz als **Entwurf**. Erst veröffentlicht, wenn alle Angaben vollständig sind und in `firma.json` `"rechtstexte_freigegeben": true` steht. |
 | `assets/styles.css` | Design im Apple-Stil (Farben als Variablen in `:root`). Nur Systemschriften, keine Google Fonts. |

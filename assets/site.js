@@ -6,7 +6,21 @@
 
   // Sanftes Einblenden beim Scrollen. Ohne JS oder bei „Bewegung reduzieren“ bleibt alles sofort sichtbar.
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce || !('IntersectionObserver' in window)) return;
+
+  // Videos: nur abspielen, solange sie sichtbar sind. Bei „Bewegung reduzieren“ kein Autostart, dafür Bedienelemente.
+  var videos = document.querySelectorAll('video[data-auto]');
+  if (reduce || !('IntersectionObserver' in window)) {
+    videos.forEach(function (v) { v.controls = true; });
+    return;
+  }
+  var vio = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { var p = en.target.play(); if (p && p.catch) p.catch(function () { en.target.controls = true; }); }
+      else en.target.pause();
+    });
+  }, { threshold: 0.35 });
+  videos.forEach(function (v) { vio.observe(v); });
+
   document.documentElement.classList.add('js');
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) {

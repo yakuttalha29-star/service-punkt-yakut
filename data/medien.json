@@ -1,0 +1,14 @@
+{
+  "_hinweis": "Alternativtexte (SEO, Screenreader) für die KI-Symbolbilder aus docs/KI-BILDER-PROMPTS.md. Gelten nur, wenn das Bild aus fotos/quelle/ki/ stammt. Bei abweichendem Motiv bitte anpassen.",
+  "medien": {
+    "hero": {"alt_ki": "Messingschlüssel, Schließzylinder, Lederschuh und graviertes Metallschild auf hellem Stein"},
+    "tueroeffnung": {"alt_ki": "Moderne Haustür mit hochwertigem Türbeschlag und Sicherheitsschloss"},
+    "schluessel": {"alt_ki": "Makroaufnahme eines frisch gefrästen Schlüssels mit feinen Metallspänen"},
+    "schliessanlagen": {"alt_ki": "Moderner Profilzylinder aus gebürstetem Nickel mit Schlüssel"},
+    "schuhreparatur": {"alt_ki": "Rahmengenähter Lederschuh mit Leisten und Schuhmacherwerkzeug auf der Werkbank"},
+    "gravur": {"alt_ki": "Lasergravur auf einem gebürsteten Metallschild in Nahaufnahme"},
+    "stempel": {"alt_ki": "Firmenstempel mit Holzgriff neben einem frischen Stempelabdruck auf Papier"},
+    "pokale": {"alt_ki": "Goldener Pokal mit gravierter Plakette vor hellem Hintergrund"},
+    "shop": {"alt_ki": "Gravierter Leder-Schlüsselanhänger, Türschild und Medaille als Produktauswahl"}
+  }
+}
