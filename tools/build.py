@@ -78,9 +78,10 @@ def maps_href():
     return "https://www.google.com/maps/search/?api=1&query=" + "+".join(q.split())
 
 GROESSEN = {  # Angabe für den Browser, wie breit das Bild dargestellt wird (für srcset)
-    "art": "(max-width: 560px) 92vw, 520px",
-    "sub-art": "(max-width: 600px) 92vw, 560px",
-    "hero-media": "(max-width: 1200px) 100vw, 1200px",
+    "art": "(max-width: 833px) 92vw, 580px",
+    "sub-art": "(max-width: 833px) 92vw, 580px",
+    "hero-media": "(max-width: 833px) 60vw, 380px",
+    "hero-solo": "(max-width: 833px) 92vw, 620px",
 }
 
 def medium(name, cls, alt_echt, eager=False):
@@ -140,8 +141,9 @@ def page(path, title, desc, body, noindex=False, extra_head="", ziel=None):
 <meta property="og:description" content="{e(desc)}">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="de_DE">
-<meta name="theme-color" content="#000000">
-<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#f6f1e8">
+<meta name="color-scheme" content="light">
+<link rel="preload" href="/assets/fonts/cormorant-600.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="/assets/styles.css">
 <script src="/assets/site.js" defer></script>
@@ -209,12 +211,12 @@ def besuch_block():
   <div class="visit-grid">
     <div class="visit-card">{icon("pin")}<h3>Standort</h3>
       <p>{e(FIRMA["standort"][:1].upper() + FIRMA["standort"][1:])}<br>{e(FIRMA["standort_detail"])}<br>{e(FIRMA.get("strasse") or "")}<br>{e(FIRMA["plz"])} {e(FIRMA["ort"])}</p>
-      <a class="link" href="{e(maps_href())}" rel="noopener">Route planen ›</a></div>
+      <a class="link" href="{e(maps_href())}" rel="noopener">Route planen</a></div>
     <div class="visit-card">{icon("clock")}<h3>Öffnungszeiten</h3>
       <p>{e(oz["text"])}<br><strong>Schlüssel-Notdienst: 24/7</strong></p></div>
     <div class="visit-card">{icon("phone")}<h3>Kontakt</h3>
       <p>{e(FIRMA.get("telefon") or "Telefon folgt")}<br>{e(FIRMA.get("email") or "")}</p>
-      {link(tel, "Anrufen ›")} {link(mail, "E-Mail schreiben ›")}</div>
+      {link(tel, "Anrufen")} {link(mail, "E-Mail schreiben")}</div>
   </div>
 </section>"""
 
@@ -225,18 +227,19 @@ def startseite():
         f'<a class="chip" href="/leistungen/{l["slug"]}.html">{icon(l["icon"], "chip-icon t-" + l["thema"])}<span>{e(l["titel"])}</span></a>'
         for l in LEISTUNGEN)
 
-    def panel(l, gross=True):
+    def zeile(nr, l):
         nd = notdienst_href() if l.get("notfall") else tel_href()
-        cta = link(nd, "Jetzt anrufen ›" if l.get("notfall") else "Anrufen ›")
+        cta = link(nd, "Jetzt anrufen" if l.get("notfall") else "Anrufen")
         return f"""
-<article class="panel {'panel-xl' if gross else 'panel-half'} reveal">
-  <div class="panel-copy">
+<article class="row reveal{' row-urgent' if l.get('notfall') else ''}">
+  <a class="row-media" href="/leistungen/{l["slug"]}.html" tabindex="-1" aria-hidden="true">{foto_oder_bild(l)}</a>
+  <div class="row-copy">
+    <p class="row-no">{nr:02d}</p>
     <p class="panel-kicker">{e(l["titel"])}</p>
     <h2>{e(l["panel_titel"])}</h2>
     <p class="panel-text">{e(l["panel_text"])}</p>
-    <p class="panel-links"><a class="link" href="/leistungen/{l["slug"]}.html">Mehr erfahren ›</a>{cta}</p>
+    <p class="panel-links"><a class="link" href="/leistungen/{l["slug"]}.html">Mehr erfahren</a>{cta}</p>
   </div>
-  {foto_oder_bild(l)}
 </article>"""
 
     ld = {
@@ -254,24 +257,28 @@ def startseite():
     if FIRMA.get("strasse"): ld["address"]["streetAddress"] = FIRMA["strasse"]
 
     tel = tel_href()
-    hm = medium("hero", "hero-media", "Schlüssel, Schuhe und Gravur bei Service-Punkt Yakut", eager=True)
-    hero_medium = f'<div class="hero-stage reveal">{hm}</div>' if hm else ""
+    hm = medium("hero", "hero-solo", "Schlüssel, Schuhe und Gravur bei Service-Punkt Yakut", eager=True)
+    if hm:
+        hero_medium = f'<div class="hero-stage">{hm}</div>'
+    else:  # kein eigenes Hero-Bild: Collage aus den drei Leitmotiven der Überschrift
+        teile = [medium(n, "hero-media", f'{by[n]["titel"]} bei Service-Punkt Yakut', eager=True)
+                 for n in ("schuhreparatur", "schluessel", "gravur")]
+        hero_medium = f'<div class="hero-stage hero-collage">{"".join(teile)}</div>' if all(teile) else ""
+    reihenfolge = ("tueroeffnung", "schluessel", "schliessanlagen", "schuhreparatur", "gravur", "stempel", "pokale")
+    zeilen = "".join(zeile(i, by[n]) for i, n in enumerate(reihenfolge, 1))
     body = f"""
+<div class="top{'' if hero_medium else ' top-solo'}">
 <section class="hero">
   <p class="hero-kicker">Service‑Punkt Yakut · Globus Gensingen</p>
-  <h1>Schlüssel. Schuhe.<br><span class="grad">Gravur.</span></h1>
+  <h1>Schlüssel. Schuhe. <span class="grad">Gravur.</span></h1>
   <p class="hero-sub">Alles an einem Ort. Gemacht mit Präzision – mitten im Globus Gensingen.</p>
   <p class="hero-ctas"><a class="btn" href="#leistungen">Leistungen ansehen</a>{link(tel, "Anrufen", "btn btn-ghost")}</p>
 </section>
-
-<nav class="chips" id="leistungen" aria-label="Alle Leistungen">{chips}</nav>
 {hero_medium}
+<nav class="chips" id="leistungen" aria-label="Alle Leistungen">{chips}</nav>
+</div>
 
-{panel(by["tueroeffnung"])}
-{panel(by["schluessel"])}
-<div class="duo">{panel(by["schuhreparatur"], False)}{panel(by["gravur"], False)}</div>
-<div class="duo">{panel(by["stempel"], False)}{panel(by["pokale"], False)}</div>
-{panel(by["schliessanlagen"])}
+<section class="rows" aria-label="Unsere Leistungen">{zeilen}</section>
 
 <section class="values reveal">
   <h2 class="section-title">Warum Service‑Punkt Yakut.</h2>
@@ -287,7 +294,7 @@ def startseite():
     {icon("building", "b2b-icon")}
     <h2>Für Firmen, Vereine<br>und Hausverwaltungen.</h2>
     <p>Schließanlagen, Firmenstempel, Türschilder, Pokale und Werbeartikel mit Logo – mit festem Ansprechpartner und auf Rechnung.</p>
-    <p class="panel-links">{link("mailto:" + FIRMA["email"] + "?subject=Firmenanfrage" if FIRMA.get("email") else None, "Angebot anfordern ›")}{link(tel, "Anrufen ›")}</p>
+    <p class="panel-links">{link("mailto:" + FIRMA["email"] + "?subject=Firmenanfrage" if FIRMA.get("email") else None, "Angebot anfordern")}{link(tel, "Anrufen")}</p>
   </div>
 </section>
 
@@ -295,7 +302,7 @@ def startseite():
   {icon("cart", "shop-icon")}
   <h2>Bald auch online.</h2>
   <p>Firmenstempel, Gravurschilder und personalisierte Geschenke – deutschlandweit bestellen.</p>
-  <a class="link" href="/shop/">Mehr erfahren ›</a>
+  <a class="link" href="/shop/">Mehr erfahren</a>
 </section>
 
 {besuch_block()}"""
@@ -319,13 +326,15 @@ def leistung_seite(l):
         {"@type": "ListItem", "position": 2, "name": l["titel"], "item": FIRMA["website"].rstrip("/") + f'/leistungen/{l["slug"]}.html'}]},
         ensure_ascii=False)
     body = f"""
+<nav class="crumbs" aria-label="Brotkrumen"><a href="/">Start</a> › {e(l["titel"])}</nav>
 <section class="sub-hero">
-  <nav class="crumbs" aria-label="Brotkrumen"><a href="/">Start</a> › {e(l["titel"])}</nav>
-  {foto_oder_bild(l, "sub-art")}
-  <p class="hero-kicker">{e(l["titel"])}</p>
-  <h1>{e(l["h1"])}</h1>
-  <p class="hero-sub">{e(l["lead"])}</p>
-  <p class="hero-ctas">{link(nd, "Notdienst anrufen" if l.get("notfall") else "Anrufen", "btn btn-urgent" if l.get("notfall") else "btn")}<a class="btn btn-ghost" href="/#besuch">Anfahrt & Zeiten</a></p>
+  <div class="sub-copy">
+    <p class="hero-kicker">{e(l["titel"])}</p>
+    <h1>{e(l["h1"])}</h1>
+    <p class="hero-sub">{e(l["lead"])}</p>
+    <p class="hero-ctas">{link(nd, "Notdienst anrufen" if l.get("notfall") else "Anrufen", "btn btn-urgent" if l.get("notfall") else "btn")}<a class="btn btn-ghost" href="/#besuch">Anfahrt & Zeiten</a></p>
+  </div>
+  <div class="sub-media">{foto_oder_bild(l, "sub-art")}</div>
 </section>
 <section class="cards">{punkte}</section>
 <section class="faq reveal"><h2 class="section-title">Häufige Fragen.</h2>{faq}</section>
@@ -337,12 +346,14 @@ def leistung_seite(l):
 def shop_platzhalter():
     body = f"""
 <section class="sub-hero">
-  {medium("shop", "sub-art", "Personalisierte Produkte von Service-Punkt Yakut") or f'<div class="sub-art glow t-gold">{icon("cart", "art-icon")}</div>'}
-  <p class="hero-kicker">Onlineshop</p>
-  <h1>Bald auch online.</h1>
-  <p class="hero-sub">Firmenstempel, Gravurschilder, Schlüsselanhänger, Pokale und personalisierte Geschenke – mit Ihrem Text und Logo, deutschlandweit geliefert.</p>
-  <p class="hero-sub">Bis dahin beraten wir Sie gern persönlich im Globus Gensingen.</p>
-  <p class="hero-ctas"><a class="btn" href="/leistungen/stempel.html">Stempel & Schilder</a><a class="btn btn-ghost" href="/leistungen/gravur.html">Lasergravur</a></p>
+  <div class="sub-copy">
+    <p class="hero-kicker">Onlineshop</p>
+    <h1>Bald auch online.</h1>
+    <p class="hero-sub">Firmenstempel, Gravurschilder, Schlüsselanhänger, Pokale und personalisierte Geschenke – mit Ihrem Text und Logo, deutschlandweit geliefert.</p>
+    <p class="hero-sub">Bis dahin beraten wir Sie gern persönlich im Globus Gensingen.</p>
+    <p class="hero-ctas"><a class="btn" href="/leistungen/stempel.html">Stempel & Schilder</a><a class="btn btn-ghost" href="/leistungen/gravur.html">Lasergravur</a></p>
+  </div>
+  <div class="sub-media">{medium("shop", "sub-art", "Personalisierte Produkte von Service-Punkt Yakut") or f'<div class="sub-art glow t-gold">{icon("cart", "art-icon")}</div>'}</div>
 </section>
 {besuch_block()}"""
     page("shop/index.html", "Onlineshop – bald verfügbar | Service-Punkt Yakut",
@@ -351,7 +362,7 @@ def shop_platzhalter():
 
 def nicht_gefunden():
     body = """
-<section class="sub-hero">
+<section class="sub-hero solo">
   <p class="hero-kicker">Fehler 404</p>
   <h1>Diese Seite gibt es nicht.</h1>
   <p class="hero-sub">Vielleicht finden Sie hier, was Sie suchen:</p>
@@ -477,8 +488,8 @@ HEADERS = """/*
   Cache-Control: public, max-age=604800
 """
 
-FAVICON = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="8" fill="#000"/>'
-           '<g fill="none" stroke="#e8c37a" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="20" r="5"/>'
+FAVICON = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><rect width="32" height="32" rx="6" fill="#1c1a16"/>'
+           '<g fill="none" stroke="#d9b877" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="20" r="5"/>'
            '<path d="M14.6 16.4 26 5M22 9l3 3M19 12l2 2"/></g></svg>')
 
 def statische_dateien():
@@ -487,7 +498,7 @@ def statische_dateien():
     (OUT / "assets").mkdir(parents=True)
     for f in ("styles.css", "site.js"):
         shutil.copy2(ROOT / "assets" / f, OUT / "assets" / f)
-    for ordner in ("img", "video"):
+    for ordner in ("img", "video", "fonts"):
         if (ROOT / "assets" / ordner).exists():
             shutil.copytree(ROOT / "assets" / ordner, OUT / "assets" / ordner,
                             ignore=shutil.ignore_patterns("medien.json", ".*"))

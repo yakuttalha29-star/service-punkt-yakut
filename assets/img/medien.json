@@ -52,5 +52,14 @@
   "h": 1200,
   "ki": false,
   "w": 1200
+ },
+ "tueroeffnung": {
+  "breiten": [
+   480,
+   800
+  ],
+  "h": 640,
+  "ki": true,
+  "w": 800
  }
 }

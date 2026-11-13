@@ -1,7 +1,7 @@
 # Service-Punkt Yakut – Website
 
 Website von **Service-Punkt Yakut – Schuh- & Schlüsseldienst Yakut** (Globus Gensingen).
-Statische Seiten mit dunklem, minimalistischem Design. Sie laufen kostenlos auf jedem statischen Hosting.
+Statische Seiten mit hellem, edlem Design (Elfenbein, Serifenschrift, Messingakzente). Sie laufen kostenlos auf jedem statischen Hosting.
 
 ## Aufbau
 
@@ -16,7 +16,7 @@ Statische Seiten mit dunklem, minimalistischem Design. Sie laufen kostenlos auf 
 | `docs/KI-BILDER-PROMPTS.md` | Prompts für die KI-Bildwelt und Anleitung zum Einbau. |
 | `public/` | **Erzeugte** Website, nur dieser Ordner wird veröffentlicht. Nicht von Hand bearbeiten, sondern `build.py` ausführen. |
 | `entwurf/` | Impressum und Datenschutz als **Entwurf**. Erst veröffentlicht, wenn alle Angaben vollständig sind und in `firma.json` `"rechtstexte_freigegeben": true` steht. |
-| `assets/styles.css` | Design im Apple-Stil (Farben als Variablen in `:root`). Nur Systemschriften, keine Google Fonts. |
+| `assets/styles.css` | Helles Design (Farben als Variablen in `:root`). Überschriften in Cormorant Garamond, selbst gehostet in `assets/fonts/` (OFL-Lizenz), keine Google Fonts. |
 | `data/shop-katalog.json` | Produktstruktur für den Shopify-Import. **Preise sind Beispiele.** |
 | `docs/` | Bestandsaufnahme, Plan, Entscheidungen. |
 

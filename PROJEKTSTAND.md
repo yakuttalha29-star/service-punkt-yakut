@@ -3,7 +3,7 @@
 Übergabe für neue Sitzungen. Zuerst diese Datei lesen, dann `README.md` und `docs/`.
 
 ## Erledigt (lokal, NICHT online)
-- Website im Apple-Stil (dunkel): Startseite, 7 Leistungsseiten, Shop-Hinweis, 404. Generator: `python3 tools/build.py` → `public/`
+- Website (ursprünglich dunkel im Apple-Stil, seit 13.11.2026 hell, siehe unten): Startseite, 7 Leistungsseiten, Shop-Hinweis, 404. Generator: `python3 tools/build.py` → `public/`
 - Daten: `data/firma.json` (Firmendaten), `data/leistungen.json` (Texte)
 - Impressum + Datenschutz als Entwurf in `entwurf/`. Sie werden erst veröffentlicht, wenn in `firma.json` `"rechtstexte_freigegeben": true` steht.
 - Geprüft mit Playwright (iPhone 13 + Desktop): keine kaputten Links, keine JS-Fehler, alle 7 Leistungen im ersten Handy-Bildschirm.
@@ -41,6 +41,12 @@
 - Die drei echten Fotos liegen jetzt in `fotos/quelle/echt/` und werden als WebP ausgeliefert.
 - Kein KI-Vorher-Nachher (irreführend), dafür echte Fotos.
 - Vom Inhaber geliefert und eingebaut (12.11.2026): KI-Bilder `gravur`, `schliessanlagen`, `schuhreparatur`, `schluessel` (je 1402×1122). Entscheidung Inhaber: KI-Bilder ersetzen die echten Fotos. Noch offen: `hero`, `tueroeffnung`, `stempel` (derzeit echtes Foto), `pokale`, `shop`, Videos.
+
+## Neues helles Design (13.11.2026, gleicher Branch, noch nicht auf `main`)
+- Inhaber wollte den Dark Mode nicht mehr. Die Seite ist jetzt hell und redaktionell: Elfenbein, Tinte, Messing, Überschriften in Cormorant Garamond (selbst gehostet). Eigenes Design, keine fremde Website kopiert.
+- Startseite: Kopf mit Bild-Collage (Schuh, Schlüssel, Gravur), darunter die 7 Leistungen als Zeilen mit Bild und Text im Wechsel. Unterseiten: Text links, Bild rechts.
+- Auf dem Handy bleiben alle 7 Leistungen im ersten Bildschirm.
+- `tueroeffnung` nutzt vorläufig einen Ausschnitt des Schließzylinder-Bildes. Ohne Bild: `pokale`, `shop` (zeigen ein Emblem). Stock-Bildquellen waren vom Netzwerk blockiert.
 
 ## Nächste Schritte
 1. Code ins GitHub-Repo pushen (vollständiger Verlauf aus der ZIP-Sicherung)
