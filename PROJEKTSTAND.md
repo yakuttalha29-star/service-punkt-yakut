@@ -46,6 +46,7 @@
 - Inhaber wollte den Dark Mode nicht mehr. Die Seite ist jetzt hell und redaktionell: Elfenbein, Tinte, Messing, Überschriften in Cormorant Garamond (selbst gehostet). Eigenes Design, keine fremde Website kopiert.
 - Startseite: Kopf mit Bild-Collage (Schuh, Schlüssel, Gravur), darunter die 7 Leistungen als Zeilen mit Bild und Text im Wechsel. Unterseiten: Text links, Bild rechts.
 - Auf dem Handy bleiben alle 7 Leistungen im ersten Bildschirm.
+- Animationen (Wunsch Inhaber, 13.11.2026): Kopf fährt beim Laden von oben/links/rechts ein, Bilder werden aufgezogen mit Lichtreflex, Leistungszeilen kommen beim Scrollen abwechselnd von links und rechts, Fortschrittslinie oben. Reines CSS plus `assets/site.js`, keine Bibliothek. Bei „Bewegung reduzieren“ abgeschaltet.
 - `tueroeffnung` nutzt vorläufig einen Ausschnitt des Schließzylinder-Bildes. Ohne Bild: `pokale`, `shop` (zeigen ein Emblem). Stock-Bildquellen waren vom Netzwerk blockiert.
 
 ## Nächste Schritte

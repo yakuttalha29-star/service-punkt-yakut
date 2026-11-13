@@ -270,7 +270,7 @@ def startseite():
 <div class="top{'' if hero_medium else ' top-solo'}">
 <section class="hero">
   <p class="hero-kicker">Service‑Punkt Yakut · Globus Gensingen</p>
-  <h1>Schlüssel. Schuhe. <span class="grad">Gravur.</span></h1>
+  <h1><span class="w">Schlüssel.</span> <span class="w">Schuhe.</span> <span class="w grad">Gravur.</span></h1>
   <p class="hero-sub">Alles an einem Ort. Gemacht mit Präzision – mitten im Globus Gensingen.</p>
   <p class="hero-ctas"><a class="btn" href="#leistungen">Leistungen ansehen</a>{link(tel, "Anrufen", "btn btn-ghost")}</p>
 </section>
