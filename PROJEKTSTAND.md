@@ -56,7 +56,7 @@
 - Zweite Fassung (gleicher Tag): alle Reels mit deutscher Sprecherstimme (ElevenLabs über Higgsfield, Stimme „Mark“), animierten Schlagzeilen und Schlusskarte, erzeugt mit `tools/reels_stimme.py`. Neu: Reel „Gravur zu Weihnachten“ (Edelstahl, Glas, Kunststoff, Holz laut Inhaber). Die Stimme „Max“ des Modells Seed Audio hatte einen starken Akzent und wurde verworfen.
 - Offen: Die Gravur-Seite der Website nennt Holz, Metall, Kunststoff, Leder. Glas ggf. ergänzen.
 - Noch NICHT gepostet. Veröffentlichung macht der Inhaber selbst.
-- Offen: `firma.json` nennt als Instagram `service.punkt`, der Inhaber sprach von `service.yakut`. Klären, welcher Name stimmt.
+- Instagram-Konto ist `service.punkt` (vom Inhaber per Screenshot bestätigt am 14.11.2026, 177 Follower). `firma.json` stimmt.
 
 ## Nächste Schritte
 1. Code ins GitHub-Repo pushen (vollständiger Verlauf aus der ZIP-Sicherung)
