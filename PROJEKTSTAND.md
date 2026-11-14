@@ -49,6 +49,13 @@
 - Animationen (Wunsch Inhaber, 13.11.2026): Kopf fährt beim Laden von oben/links/rechts ein, Bilder werden aufgezogen mit Lichtreflex, Leistungszeilen kommen beim Scrollen abwechselnd von links und rechts, Fortschrittslinie oben. Reines CSS plus `assets/site.js`, keine Bibliothek. Bei „Bewegung reduzieren“ abgeschaltet.
 - `tueroeffnung` nutzt vorläufig einen Ausschnitt des Schließzylinder-Bildes. Ohne Bild: `pokale`, `shop` (zeigen ein Emblem). Stock-Bildquellen waren vom Netzwerk blockiert.
 
+## Instagram-Reels (14.11.2026, Branch `claude/werbevideos-instagram-pclu26`)
+- Drei Werbevideos im Hochformat (1080 × 1920, 10 s, mit Ton) mit Higgsfield erzeugt (Seedance 2.5, 720p, je 70 Credits): Schuhreparatur, Schlüssel nachmachen, Türöffnung 24/7.
+- Texteinblendung in der Website-Schrift mit `tools/reels.py` (Titeltafel, Schlusskarte mit Ort, Zeiten bzw. Notdienstnummer, Hinweis „Symbolvideo, mit KI erstellt“). Nur Angaben aus `firma.json` und `leistungen.json`.
+- Die fertigen Videos liegen in der Higgsfield-Mediathek des Inhabers, nicht im Repository. Texte und Hashtags: `social/instagram/README.md`.
+- Noch NICHT gepostet. Veröffentlichung macht der Inhaber selbst.
+- Offen: `firma.json` nennt als Instagram `service.punkt`, der Inhaber sprach von `service.yakut`. Klären, welcher Name stimmt.
+
 ## Nächste Schritte
 1. Code ins GitHub-Repo pushen (vollständiger Verlauf aus der ZIP-Sicherung)
 2. Inhaber gibt Impressum/Datenschutz frei (oder lässt sie über einen Rechtstexte-Dienst prüfen)
