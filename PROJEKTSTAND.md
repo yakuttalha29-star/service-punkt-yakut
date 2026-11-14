@@ -53,6 +53,8 @@
 - Drei Werbevideos im Hochformat (1080 × 1920, 10 s, mit Ton) mit Higgsfield erzeugt (Seedance 2.5, 720p, je 70 Credits): Schuhreparatur, Schlüssel nachmachen, Türöffnung 24/7.
 - Texteinblendung in der Website-Schrift mit `tools/reels.py` (Titeltafel, Schlusskarte mit Ort, Zeiten bzw. Notdienstnummer, Hinweis „Symbolvideo, mit KI erstellt“). Nur Angaben aus `firma.json` und `leistungen.json`.
 - Die fertigen Videos liegen in der Higgsfield-Mediathek des Inhabers, nicht im Repository. Texte und Hashtags: `social/instagram/README.md`.
+- Zweite Fassung (gleicher Tag): alle Reels mit deutscher Sprecherstimme (ElevenLabs über Higgsfield, Stimme „Mark“), animierten Schlagzeilen und Schlusskarte, erzeugt mit `tools/reels_stimme.py`. Neu: Reel „Gravur zu Weihnachten“ (Edelstahl, Glas, Kunststoff, Holz laut Inhaber). Die Stimme „Max“ des Modells Seed Audio hatte einen starken Akzent und wurde verworfen.
+- Offen: Die Gravur-Seite der Website nennt Holz, Metall, Kunststoff, Leder. Glas ggf. ergänzen.
 - Noch NICHT gepostet. Veröffentlichung macht der Inhaber selbst.
 - Offen: `firma.json` nennt als Instagram `service.punkt`, der Inhaber sprach von `service.yakut`. Klären, welcher Name stimmt.
 
